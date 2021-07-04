@@ -170,14 +170,29 @@ all_packages=(
 
 # NOTE: if you don't want to install base-devel, then you can remove it.
 pacstrap /mnt base base-devel ${all_packages[@]}
+if [ "$?" -ne 0 ]
+then
+        echo "Can NOT move some.log to $BAKDIR/some-$TODAY.log!!"
+        exit 1
+fi
 # NOTE: using relatime or noatime depends on what fs you use...
 #genfstab -U /mnt | sed -e 's/relatime/noatime/g' >> /mnt/etc/fstab
 genfstab -U /mnt >> /mnt/etc/fstab
+if [ "$?" -ne 0 ]
+then
+        echo "Can NOT move some.log to $BAKDIR/some-$TODAY.log!!"
+        exit 1
+fi
 
 SCRIPT_DIR=/mnt/scripts
 mkdir -p $SCRIPT_DIR
 mv chroot.sh $SCRIPT_DIR
 arch-chroot /mnt zsh /scripts/chroot.sh $ROOT_PART
+if [ "$?" -ne 0 ]
+then
+        echo "Can NOT move some.log to $BAKDIR/some-$TODAY.log!!"
+        exit 1
+fi
 
 rm -r /mnt/scripts
 
