@@ -2,7 +2,7 @@
 # vim:noet:
 
 # NOTE: you *will* want change these lines...
-export HOSTNAME=host
+export HOSTNAME=kwei-laptop
 export USER=kwei
 export PASS=
 export TIMEZONE=Asia/Taipei
