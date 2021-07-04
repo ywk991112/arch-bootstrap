@@ -5,11 +5,11 @@
 # before running this script
 
 # NOTE: you must change the following lines...
-ROOT_PART=/dev/sda3
-SWAP_PART=/dev/sda2
-EFI_PART=/dev/sda1
-HOME_PART=/dev/sdb2
-VAR_PART=/dev/sdb1
+ROOT_PART=/dev/nvme0n1p7
+SWAP_PART=/dev/nvme0n1p8
+EFI_PART=/dev/nvme0n1p6
+HOME_PART=/dev/nvme0n1p9
+VAR_PART=
 
 mount ${ROOT_PART} /mnt
 [[ -n ${SWAP_PART} ]] && swapon ${SWAP_PART}
