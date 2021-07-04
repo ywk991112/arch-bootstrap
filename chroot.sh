@@ -3,8 +3,8 @@
 
 # NOTE: you *will* want change these lines...
 export HOSTNAME=host
-export USER=server
-export PASS=password
+export USER=kwei
+export PASS=
 export TIMEZONE=Asia/Taipei
 
 # variable from bootstrap.sh
