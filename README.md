@@ -2,6 +2,7 @@
 
 My personal scripts for bootstrapping an archlinux system.  
 
+
 NOTE: Sometimes I just updated the script without testing it,
 please check it by yourself and make sure that you fully understand
 the installation process before using it.
@@ -15,7 +16,7 @@ the installation process before using it.
    has been updated.
 5. run the following command:
 ```console
-$ curl -L https://git.io/v5Aju | tar -xz --strip-component=1
+$ curl -L https://git.io/JcatX | tar -xz --strip-component=1
 $ vim bootstrap.sh # set the variables and modify packages to what you need.
 $ vim chroot.sh # set the variables to what you need.
 $ zsh bootstrap.sh
