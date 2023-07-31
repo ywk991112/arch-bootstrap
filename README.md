@@ -21,3 +21,6 @@ $ vim bootstrap.sh # set the variables and modify packages to what you need.
 $ vim chroot.sh # set the variables to what you need.
 $ zsh bootstrap.sh
 ```
+
+Note:
+https://bit.ly/arch-boostrap is the shorten URL of https://github.com/ywk991112/arch-bootstrap/archive/refs/heads/master.tar.gz
