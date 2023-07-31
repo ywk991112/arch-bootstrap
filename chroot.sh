@@ -2,9 +2,9 @@
 # vim:noet:
 
 # NOTE: you *will* want change these lines...
-export HOSTNAME=kwei-laptop
+export HOSTNAME=kwei-pc
 export USER=kwei
-export PASS=
+export PASS=hao123
 export TIMEZONE=Asia/Taipei
 
 # variable from bootstrap.sh
