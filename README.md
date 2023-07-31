@@ -16,7 +16,7 @@ the installation process before using it.
    has been updated.
 5. run the following command:
 ```console
-$ curl -L -O https://git.io/JcatX | tar -xz --strip-component=1
+$ curl -L https://bit.ly/arch-boostrap | tar -xz --strip-component=1
 $ vim bootstrap.sh # set the variables and modify packages to what you need.
 $ vim chroot.sh # set the variables to what you need.
 $ zsh bootstrap.sh
