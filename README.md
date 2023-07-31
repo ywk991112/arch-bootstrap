@@ -1,6 +1,6 @@
 # Arch Bootstrap Script
 
-My personal scripts for bootstrapping an archlinux system.  
+My personal scripts for bootstrapping an archlinux system. [Installation Guide](https://leomao.github.io/2017/09/archlinux-install-note/#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD)
 
 
 NOTE: Sometimes I just updated the script without testing it,
