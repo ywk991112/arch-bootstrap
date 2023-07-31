@@ -5,10 +5,10 @@
 # before running this script
 
 # NOTE: you must change the following lines...
-ROOT_PART=/dev/nvme0n1p7
-SWAP_PART=/dev/nvme0n1p8
-EFI_PART=/dev/nvme0n1p6
-HOME_PART=/dev/nvme0n1p9
+ROOT_PART=/dev/sda2
+SWAP_PART=/dev/nvme0n1p2
+EFI_PART=/dev/nvme0n1p1
+HOME_PART=/dev/nvme0n1p3
 VAR_PART=
 
 mount ${ROOT_PART} /mnt
