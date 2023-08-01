@@ -25,3 +25,31 @@ $ zsh bootstrap.sh
 
 Note:
 https://bit.ly/arch-boostrap is the shorten URL of https://github.com/ywk991112/arch-bootstrap/archive/refs/heads/master.tar.gz
+
+# Manually set an IP Address
+1. **Check Network Interface**: You can use the command ip link to see the available network interfaces. You should see something like enp3s0, eth0, or similar. These names represent your network interfaces.
+2. **Assign IP Address**: Assign the IP address to your network interface with the following command:  
+    ```bash
+    ip addr add 140.112.19.242/24 dev <interface_name>
+    ```
+   Replace <interface_name> with your network interface name (like enp3s0 or eth0). The /24 following the IP address is the network mask, and it's a common default. This might need to be changed depending on your network.
+3. **Bring up the Network Interface**: Bring the interface up if you haven't done so already:
+    ```bash
+    ip link set <interface_name> up
+    ```
+4. **Set a Default Gateway**: To access the internet, you will need to set a default gateway. This is usually the IP address of your router. You can add it with the following command:
+    ```bash
+    ip route add default via <gateway_ip>
+    ```
+   Replace <gateway_ip> with the IP address of your gateway. If you don't know this, you may need to look at your router's settings, or contact your network administrator.
+5. **Set DNS Server**: Finally, you will need to specify a DNS server. Arch Linux uses a file called resolv.conf located in the /etc directory for this. You can use a text editor like nano to modify it. Here's how to add Google's DNS servers:
+    ```bash
+    echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+    echo "nameserver 8.8.4.4" >> /etc/resolv.conf
+    ```
+   These commands append Google's DNS servers to the end of the resolv.conf file.
+6. After you've done all these steps, try pinging a website again to see if you are connected:
+    ```bash
+    ping -c 3 8.8.8.8
+    ```
+
