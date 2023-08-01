@@ -68,6 +68,7 @@ basic_packages=(
 	#### network related ####
 	"bind-tools"
 	"wget"
+        "networkmanager"
 	#"netctl"
 	#"inetutils"
 )
