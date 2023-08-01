@@ -80,7 +80,7 @@ editor	0
 EOF
 
 # sudo
-sed -i 's/# \(%wheel ALL=(ALL) ALL\)/\1/' /etc/sudoers
+sed -i 's/# \(%wheel ALL=(ALL:ALL) ALL\)/\1/' /etc/sudoers
 
 useradd -mG wheel,storage,power,video,audio $USER
 echo "$USER:$PASS" | chpasswd
