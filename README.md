@@ -26,7 +26,15 @@ $ zsh bootstrap.sh
 Note:
 https://bit.ly/arch-boostrap is the shorten URL of https://github.com/ywk991112/arch-bootstrap/archive/refs/heads/master.tar.gz
 
-# Manually set an IP Address
+## Create Installer USB Drive
+1. Insert your USB drive into your computer. Make sure the drive is not mounted.
+2. Use the `lsblk` command to determine the device node assigned to your USB drive. The command should return something like `/dev/sdX` where X is the device letter.
+3. Run the `dd` command to write the ISO to the USB drive. Be sure to replace `/dev/sdX` with your USB device's actual node and `path/to/archlinux.iso` with the path to the downloaded Arch Linux ISO:
+    ```bash
+    sudo dd bs=4M if=path/to/archlinux-2023.07.01-x86_64.iso of=/dev/sdX status=progress oflag=sync
+    ```
+
+## Manually set an IP Address
 1. **Check Network Interface**: You can use the command ip link to see the available network interfaces. You should see something like enp3s0, eth0, or similar. These names represent your network interfaces.
 2. **Assign IP Address**: Assign the IP address to your network interface with the following command:  
     ```bash
@@ -51,12 +59,4 @@ https://bit.ly/arch-boostrap is the shorten URL of https://github.com/ywk991112/
 6. After you've done all these steps, try pinging a website again to see if you are connected:
     ```bash
     ping -c 3 8.8.8.8
-    ```
-
-# Create Installer USB Drive
-1. Insert your USB drive into your computer. Make sure the drive is not mounted.
-2. Use the `lsblk` command to determine the device node assigned to your USB drive. The command should return something like `/dev/sdX` where X is the device letter.
-3. Run the `dd` command to write the ISO to the USB drive. Be sure to replace `/dev/sdX` with your USB device's actual node and `path/to/archlinux.iso` with the path to the downloaded Arch Linux ISO:
-    ```bash
-    sudo dd bs=4M if=path/to/archlinux-2023.07.01-x86_64.iso of=/dev/sdX status=progress oflag=sync
     ```
