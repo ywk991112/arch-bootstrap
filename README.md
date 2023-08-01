@@ -17,6 +17,7 @@ the installation process before using it.
 5. run the following command:
 ```console
 $ curl -L https://bit.ly/arch-boostrap | tar -xz --strip-component=1
+$ zsh format.sh
 $ vim bootstrap.sh # set the variables and modify packages to what you need.
 $ vim chroot.sh # set the variables to what you need.
 $ zsh bootstrap.sh
