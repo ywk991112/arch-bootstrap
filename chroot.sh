@@ -75,7 +75,7 @@ fi
 
 cat > /boot/loader/loader.conf << EOF
 default	${default_kernel}
-timeout	3
+timeout	60
 editor	0
 EOF
 
