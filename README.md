@@ -53,3 +53,10 @@ https://bit.ly/arch-boostrap is the shorten URL of https://github.com/ywk991112/
     ping -c 3 8.8.8.8
     ```
 
+# Create Installer USB Drive
+1. Insert your USB drive into your computer. Make sure the drive is not mounted.
+2. Use the `lsblk` command to determine the device node assigned to your USB drive. The command should return something like `/dev/sdX` where X is the device letter.
+3. Run the `dd` command to write the ISO to the USB drive. Be sure to replace `/dev/sdX` with your USB device's actual node and `path/to/archlinux.iso` with the path to the downloaded Arch Linux ISO:
+    ```bash
+    sudo dd bs=4M if=path/to/archlinux-2023.07.01-x86_64.iso of=/dev/sdX status=progress oflag=sync
+    ```
